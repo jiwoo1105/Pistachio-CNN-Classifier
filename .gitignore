@@ -1,0 +1,41 @@
+# 모델 파일 (용량 큰 파일)
+*.h5
+
+# 데이터셋 폴더
+Pistachio_Image_Dataset/
+Pistachio_Image_Dataset_120x120/
+
+# Python 캐시
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 가상환경
+venv/
+.venv/
+env/
+ENV/
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 기타
+*.log
+*.pdf
+*.docx
+new/
+
+# 스크린샷은 포함 (GitHub README용)
+!screenshots/

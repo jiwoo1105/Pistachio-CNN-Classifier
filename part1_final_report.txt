@@ -1,0 +1,67 @@
+================================================================================
+피스타치오 분류 CNN 모델 - Part 1 최종 보고서
+================================================================================
+
+[프로젝트 개요]
+목적: Kirmizi vs Siirt 피스타치오 이진 분류
+데이터: 2148개 이미지 (120x120x3)
+Train/Test 비율: 7:3
+Random State: 123
+
+[모델 아키텍처]
+구조: VGG 스타일 CNN (전이학습 사용 안 함, 처음부터 학습)
+Hidden Layer 수: 4개 (Convolutional Blocks)
+총 파라미터 수: 7,667,489개
+블록 구조: Conv2D x2 + BatchNorm + MaxPooling + Dropout
+필터 수: 32 → 64 → 128 → 256 (점진적 증가)
+
+[하이퍼파라미터]
+Epochs: 100
+Batch Size: 32
+Validation Split: 0.2
+Optimizer: Adam (learning_rate=0.001)
+Loss: Binary Crossentropy
+Dropout: Conv=0.25, Dense=0.5
+
+[학습 결과]
+Train Accuracy: 98.54%
+Test Accuracy: 94.42%
+Best Validation Accuracy: 95.02% (Epoch 68)
+Overfitting: 4.12%
+
+[Confusion Matrix]
+[[343  27]
+ [  9 266]]
+
+정분류: 609개 / 645개 (94.42%)
+오분류: 36개 / 645개 (5.58%)
+
+[클래스별 성능]
+Kirmizi_Pistachio:
+  정확도: 92.70%
+  오분류: 27개 → Siirt로 잘못 분류
+
+Siirt_Pistachio:
+  정확도: 96.73%
+  오분류: 9개 → Kirmizi로 잘못 분류
+
+[Classification Report]
+                   precision    recall  f1-score   support
+
+Kirmizi_Pistachio     0.9744    0.9270    0.9501       370
+  Siirt_Pistachio     0.9078    0.9673    0.9366       275
+
+         accuracy                         0.9442       645
+        macro avg     0.9411    0.9471    0.9434       645
+     weighted avg     0.9460    0.9442    0.9444       645
+
+[생성된 파일]
+1. 모델 파일: /Users/ziuuu/Documents/Python/DKU/deep_learning/Pistachio/pistachio_cnn_model.h5
+2. Part 2용 모델: /Users/ziuuu/Documents/Python/DKU/deep_learning/Pistachio/pistachio_model_final.h5
+3. 학습곡선 그래프: /Users/ziuuu/Documents/Python/DKU/deep_learning/Pistachio/learning_curves.png
+4. 보고서: /Users/ziuuu/Documents/Python/DKU/deep_learning/Pistachio/part1_final_report.txt
+
+[결론]
+VGG 스타일 CNN 모델로 94.42%의 Test Accuracy 달성
+전이학습 없이 처음부터 학습하여 우수한 성능 확보
+Overfitting이 4.12%로 낮아 일반화 성능 양호
