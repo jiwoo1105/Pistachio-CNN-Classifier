@@ -88,14 +88,14 @@ Pistachio/
 **Kirmizi 피스타치오 분류 예시**:
 <img src="screenshots/gui_result.png" width="600">
 
-- Kirmizi_Pistachio: 98% 확률
-- Siirt_Pistachio: 2% 확률
+- Kirmizi_Pistachio: 0.98 (98%)
+- Siirt_Pistachio: 0.02 (2%)
 
 **Siirt 피스타치오 분류 예시**:
 <img src="screenshots/gui_result_siirt.png" width="600">
 
-- Siirt_Pistachio: 96% 확률
-- Kirmizi_Pistachio: 4% 확률
+- Siirt_Pistachio: 0.92 (92%)
+- Kirmizi_Pistachio: 0.08 (8%)
 
 ## 🎯 특징
 
@@ -108,6 +108,4 @@ Pistachio/
 
 MIT License
 
-## 👥 개발자
 
-DKU Deep Learning Team
